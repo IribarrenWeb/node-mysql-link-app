@@ -1,0 +1,35 @@
+<div class="row mt-5">
+
+    {{#each links}}
+    <div class="col-md-4">
+        <div class="card border-dark mb-3 shadow-sm rounded" style="max-width: 18rem;">
+            <div class="card-body text-dark border-bottom border-secondary rounded">
+                <div class="text-center">
+                    <a class="font-weight-bold text-info text-uppercase h5" target="_blank"
+                        href="{{url}}">{{this.name}}</a>
+                </div>
+                <p class="card-text mt-2 mb-0">{{this.description}}</p>
+                <small class="text-secondary"><img src="https://image.flaticon.com/icons/svg/446/446158.svg"
+                        class="mr-2" height="15px">{{timeago created_at}}</small>
+            </div>
+            <div class="card-footer bg-white border-top-0 rounded">
+                <div class="row  justify-content-between">
+                    <a class="col-md-5 btn btn-info rounded btn-sm btn-block" href="links/edit/{{id}}"
+                        role="button">Editar</a>
+                    <a class="col-md-5 mt-md-0 btn rounded btn-outline-danger btn-sm btn-block"
+                        href="links/delete/{{id}}" role="button">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="col-md-4 mx-auto">
+        <div class="card rounded px-5 py-3">
+            <p class="card-text text-center">
+                There is no links to list.
+            </p>
+            <a href="/links/add" class="btn btn-sm btn-block rounded shadow-sm btn-success">Create one</a>
+        </div>
+    </div>
+    {{/each}}
+</div>

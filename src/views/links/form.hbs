@@ -1,0 +1,25 @@
+<dirv class="row mt-5 justify-content-center">
+
+  <div class="card text-left col-md-7 col-sm-10 col-11 col-lg-5 rounded">
+    <div class="card-body">
+      <h4 class="card-title text-center">{{nameform}}</h4>
+      <form class="" method="POST">
+        <div class="form-group">
+          <input type="text" class="form-control rounded" {{#if edit}}value="{{link.name}}"{{/if}}  name="name" placeholder="Title" required>
+        </div>
+        <div class="form-group">
+          <input type="url" class="form-control rounded" {{#if edit}}value="{{link.url}}"{{/if}}  name="url" placeholder="URL" required="true">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control rounded" placeholder="Description" name="description" rows="3"
+            required>{{#if edit}}{{link.description}}{{/if}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-success shadow btn-sm rounded btn-block">{{#if edit}}Update{{else}}Save{{/if}}</button>
+        {{#if edit}}
+          <a href="/links" class="btn btn-outline-danger rounded btn-block btn-sm shadow">Cancel</a>
+        {{/if}}
+      </form>
+    </div>
+  </div>
+
+</dirv>

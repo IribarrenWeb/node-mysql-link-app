@@ -1,0 +1,36 @@
+<nav class="container">
+    <a class="navbar-brand" href="{{baseUrl}}">LINKAPP</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarColor01">
+        <ul class="navbar-nav">
+            {{#if user.id}}
+            <li class="nav-item">
+                <a class="nav-link" href="{{baseUrl}}links">List</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    {{user.name}} {{user.lastname}}
+                </a>
+                <div class="dropdown-menu px-1 rounded" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{baseUrl}}profile">Dashboard</a>
+                    <a class="dropdown-item" href="{{baseUrl}}links/add">Add link</a>
+                    <a class="dropdown-item" href="{{baseUrl}}links/trash">Trash</a>
+                    <a class="mx-auto btn-block rounded btn btn-sm btn-danger" href="{{baseUrl}}logout">Logout</a>
+                </div>
+            </li>
+            {{else}}
+            <li class="nav-item">
+                <a class="nav-link" href="{{baseUrl}}login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{baseUrl}}signup">Singup</a>
+            </li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>
